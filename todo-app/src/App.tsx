@@ -8,7 +8,7 @@ const App: React.FC = () => {
       className="todo-list stack-large stack-exception"
       aria-labelledby="list-heading"
     >
-      <TodoItem name="Eat" />
+      <TodoItem name="Eat" completed />
       <TodoItem name="Sleep" />
       <TodoItem name="Repeat" />
     </ul>
