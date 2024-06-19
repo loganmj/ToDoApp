@@ -1,12 +1,12 @@
-import { useState } from "react";
+import useTodoContext from "../hooks/UseTodoContext";
 
 const Form: React.FC = () => {
-  // A name property for the form
-  const [name, setName] = useState("");
+  // Retrieve TodoContext
+  const { formName, updateFormName } = useTodoContext();
 
   // A method to handle input data changes
   const handleInputChanged = (event: any) => {
-    setName(event.target.value);
+    updateFormName(event.target.value);
   };
 
   // A method to handle the submit button click
@@ -28,7 +28,7 @@ const Form: React.FC = () => {
         className="input input__lg"
         name="text"
         autoComplete="off"
-        value={name}
+        value={formName}
         onChange={handleInputChanged}
       />
       <button type="submit" className="btn btn__primary btn__lg">
