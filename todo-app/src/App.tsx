@@ -18,7 +18,12 @@ const App: React.FC = () => {
       {
         // Iterate over data array to add TodoItems
         DATA.map((task) => (
-          <TodoItem id={task.id} name={task.name} completed={task.completed} />
+          <TodoItem
+            id={task.id}
+            name={task.name}
+            completed={task.completed}
+            key={task.id}
+          />
         ))
       }
     </ul>
