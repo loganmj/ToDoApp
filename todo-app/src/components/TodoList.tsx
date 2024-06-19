@@ -7,7 +7,7 @@ const TodoList: React.FC = () => {
 
   return (
     <>
-      <h2 id="list-heading">3 tasks remaining</h2>
+      <h2 id="list-heading">{todoItems.length} tasks remaining</h2>
       <ul
         role="list"
         className="todo-list stack-large stack-exception"
