@@ -1,11 +1,11 @@
 import ITodoItem from "./ITodoItem";
 
-const TodoItem: React.FC<ITodoItem> = ({ name, completed }) => {
+const TodoItem: React.FC<ITodoItem> = ({ id, name, completed }) => {
   return (
     <li className="todo stack-small">
       <div className="c-cb">
-        <input id="todo-0" type="checkbox" defaultChecked={completed} />
-        <label className="todo-label" htmlFor="todo-0">
+        <input id={id} type="checkbox" defaultChecked={completed} />
+        <label className="todo-label" htmlFor={id}>
           {name}
         </label>
       </div>
