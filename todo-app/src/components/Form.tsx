@@ -1,6 +1,12 @@
 const Form: React.FC = () => {
+  // A method to handle the submit button click
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    alert("Hello, world!");
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h2 className="label-wrapper">
         <label htmlFor="new-todo-input" className="label__lg">
           What needs to be done?
