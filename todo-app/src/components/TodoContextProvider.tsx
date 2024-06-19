@@ -16,7 +16,7 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   const removeTodoItem = (name: string) => {
-    // TODO
+    alert(name);
   };
 
   return (
