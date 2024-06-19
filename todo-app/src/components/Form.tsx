@@ -1,4 +1,14 @@
+import { useState } from "react";
+
 const Form: React.FC = () => {
+  // A name property for the form
+  const [name, setName] = useState("");
+
+  // A method to handle input data changes
+  const handleInputChanged = (event: any) => {
+    setName(event.target.value);
+  };
+
   // A method to handle the submit button click
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -18,6 +28,8 @@ const Form: React.FC = () => {
         className="input input__lg"
         name="text"
         autoComplete="off"
+        value={name}
+        onChange={handleInputChanged}
       />
       <button type="submit" className="btn btn__primary btn__lg">
         Add
