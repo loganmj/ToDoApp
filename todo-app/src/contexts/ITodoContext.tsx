@@ -1,9 +1,8 @@
 // Interface for TodoContext
 interface ITodoContext {
-  formName: string;
-  updateFormName: (name: string) => void;
   todoItems: [];
-  updateTodoItems: (items: []) => void;
+  addTodoItem: (name: string) => void;
+  removeTodoItem: (name: string) => void;
 }
 
 export default ITodoContext;

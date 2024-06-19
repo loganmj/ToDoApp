@@ -1,18 +1,29 @@
+import { useState } from "react";
 import useTodoContext from "../hooks/UseTodoContext";
 
 const Form: React.FC = () => {
   // Retrieve TodoContext
-  const { formName, updateFormName } = useTodoContext();
+  const { addTodoItem } = useTodoContext();
+
+  // Form text property
+  const [formText, setFormText] = useState<string>("");
 
   // A method to handle input data changes
   const handleInputChanged = (event: any) => {
-    updateFormName(event.target.value);
+    setFormText(event.target.value);
   };
 
   // A method to handle the submit button click
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    alert("Hello, world!");
+
+    // Don't process empty text
+    if (formText === "") {
+      return;
+    }
+
+    alert(formText);
+    addTodoItem(formText);
   };
 
   return (
@@ -28,7 +39,7 @@ const Form: React.FC = () => {
         className="input input__lg"
         name="text"
         autoComplete="off"
-        value={formName}
+        value={formText}
         onChange={handleInputChanged}
       />
       <button type="submit" className="btn btn__primary btn__lg">
