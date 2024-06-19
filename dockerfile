@@ -5,13 +5,13 @@ FROM node:latest
 WORKDIR /app
 
 # Copy the package.json and package-lock.json
-COPY ToDoApp/package*.json ./
+COPY todo-app/package*.json ./
 
 # Install dependencies
 RUN npm install
 
 # Copy the rest of the app's source code
-COPY ToDoApp/ .
+COPY todo-app/ .
 
 # Build for production
 RUN npm run build
