@@ -1,5 +1,6 @@
 import useTodoContext from "../hooks/UseTodoContext";
 import TodoItem from "./TodoItem";
+import { v4 as uuidv4 } from "uuid";
 
 const TodoList: React.FC = () => {
   // Retrieve TodoContext properties
@@ -20,7 +21,7 @@ const TodoList: React.FC = () => {
               id={item.id}
               name={item.name}
               completed={item.completed}
-              key={item.id}
+              key={uuidv4()}
             />
           ))
         }
