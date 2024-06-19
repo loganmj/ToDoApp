@@ -3,6 +3,7 @@ import TodoItem from "./components/TodoItem";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
 import TodoContextProvider from "./components/TodoContextProvider";
+import TodoList from "./components/TodoList";
 
 const App: React.FC = () => {
   // Define the data array
@@ -22,24 +23,7 @@ const App: React.FC = () => {
           <FilterButton />
           <FilterButton />
         </div>
-        <h2 id="list-heading">3 tasks remaining</h2>
-        <ul
-          role="list"
-          className="todo-list stack-large stack-exception"
-          aria-labelledby="list-heading"
-        >
-          {
-            // Iterate over data array to add TodoItems
-            DATA.map((task) => (
-              <TodoItem
-                id={task.id}
-                name={task.name}
-                completed={task.completed}
-                key={task.id}
-              />
-            ))
-          }
-        </ul>
+        <TodoList />
       </div>
     </TodoContextProvider>
   );

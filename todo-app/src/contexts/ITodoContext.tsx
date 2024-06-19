@@ -1,6 +1,8 @@
+import ITodoItem from "../components/ITodoItem";
+
 // Interface for TodoContext
 interface ITodoContext {
-  todoItems: [];
+  todoItems: ITodoItem[];
   addTodoItem: (name: string) => void;
   removeTodoItem: (name: string) => void;
 }

@@ -7,11 +7,12 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   // todoItems context property
-  const [todoItems, setTodoItems] = useState<[]>([]);
+  const [todoItems, setTodoItems] = useState<ITodoItem[]>([]);
 
   // Add todo item
   const addTodoItem = (name: string) => {
-    // TODO
+    const newTodoItem = { id: "id", name, completed: false };
+    setTodoItems([...todoItems, newTodoItem]);
   };
 
   const removeTodoItem = (name: string) => {

@@ -21,8 +21,6 @@ const Form: React.FC = () => {
     if (formText === "") {
       return;
     }
-
-    alert(formText);
     addTodoItem(formText);
   };
 
