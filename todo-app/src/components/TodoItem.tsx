@@ -1,6 +1,15 @@
+import useTodoContext from "../hooks/UseTodoContext";
 import ITodoItem from "./ITodoItem";
 
 const TodoItem: React.FC<ITodoItem> = ({ id, name, completed }) => {
+  // Retrieve TodoContext
+  const { removeTodoItem } = useTodoContext();
+
+  // Handles the delete button being clicked
+  const handleDeleteButtonClick = () => {
+    removeTodoItem(name);
+  };
+
   return (
     <li className="todo stack-small">
       <div className="c-cb">
@@ -13,7 +22,11 @@ const TodoItem: React.FC<ITodoItem> = ({ id, name, completed }) => {
         <button type="button" className="btn">
           Edit <span className="visually-hidden">{name}</span>
         </button>
-        <button type="button" className="btn btn__danger">
+        <button
+          type="button"
+          className="btn btn__danger"
+          onClick={handleDeleteButtonClick}
+        >
           Delete <span className="visually-hidden">{name}</span>
         </button>
       </div>

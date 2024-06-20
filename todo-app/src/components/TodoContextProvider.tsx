@@ -9,14 +9,16 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
   // todoItems context property
   const [todoItems, setTodoItems] = useState<ITodoItem[]>([]);
 
-  // Add todo item
+  // Add todo item to the list
   const addTodoItem = (name: string) => {
     const newTodoItem = { id: "id", name, completed: false };
     setTodoItems([...todoItems, newTodoItem]);
   };
 
+  // Remove a todo item from the list
   const removeTodoItem = (name: string) => {
-    alert(name);
+    const updatedList = todoItems.filter((item) => item.name !== name);
+    setTodoItems(updatedList);
   };
 
   return (
