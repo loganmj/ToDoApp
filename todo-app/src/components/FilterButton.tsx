@@ -2,7 +2,7 @@ import useTodoContext from "../hooks/UseTodoContext";
 import IFilterButton from "./IFilterButton";
 
 // A button that allows the user to filter the todo list.
-const FilterButton: React.FC<IFilterButton> = ({ id, name, filterType }) => {
+const FilterButton: React.FC<IFilterButton> = ({ name, filterType }) => {
   // Get context
   const { setFilter } = useTodoContext();
 
@@ -13,7 +13,6 @@ const FilterButton: React.FC<IFilterButton> = ({ id, name, filterType }) => {
 
   return (
     <button
-      id={id}
       type="button"
       className="btn toggle-btn"
       aria-pressed="true"

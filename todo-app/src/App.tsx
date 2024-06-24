@@ -4,6 +4,7 @@ import FilterButton from "./components/FilterButton";
 import TodoContextProvider from "./components/TodoContextProvider";
 import TodoList from "./components/TodoList";
 import "./App.css";
+import TodoFilter from "./components/TodoFilter";
 
 const App: React.FC = () => {
   return (
@@ -12,9 +13,9 @@ const App: React.FC = () => {
         <h1>Todo List</h1>
         <Form />
         <div className="filters btn-group stack-exception">
-          <FilterButton />
-          <FilterButton />
-          <FilterButton />
+          <FilterButton name="All" filterType={TodoFilter.All} />
+          <FilterButton name="Active" filterType={TodoFilter.Active} />
+          <FilterButton name="Completed" filterType={TodoFilter.Completed} />
         </div>
         <TodoList />
       </div>
