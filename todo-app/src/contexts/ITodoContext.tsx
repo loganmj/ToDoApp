@@ -1,9 +1,11 @@
 import ITodoItem from "../components/ITodoItem";
+import TodoFilter from "../components/TodoFilter";
 
 // Interface for TodoContext
 interface ITodoContext {
   // Properties
   todoItems: ITodoItem[];
+  filter: TodoFilter;
 
   // Functions
   addTodoItem: (name: string) => void;
