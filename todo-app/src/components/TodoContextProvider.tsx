@@ -12,7 +12,7 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
   const [todoItems, setTodoItems] = useState<ITodoItem[]>([]);
 
   // The active todo list filter
-  const [filter, setFilter] = useState<TodoFilter>(TodoFilter.All);
+  const [filter, changeFilter] = useState<TodoFilter>(TodoFilter.All);
 
   // Add todo item to the list
   const addTodoItem = (name: string) => {
@@ -52,6 +52,11 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
     setTodoItems(newArray);
   };
 
+  // Sets the filter to a new value
+  const setFilter = (newFilter: TodoFilter) => {
+    changeFilter(newFilter);
+  };
+
   /*
 
   // Prints an item list
@@ -75,6 +80,7 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
         removeTodoItem,
         setItemCompleted,
         setItemName,
+        setFilter,
       }}
     >
       {children}

@@ -12,6 +12,7 @@ interface ITodoContext {
   removeTodoItem: (itemID: string) => void;
   setItemCompleted: (itemID: string, completed: boolean) => void;
   setItemName: (itemID: string, newName: string) => void;
+  setFilter: (newFilter: TodoFilter) => void;
 }
 
 export default ITodoContext;

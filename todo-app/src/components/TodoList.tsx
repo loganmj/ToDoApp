@@ -1,10 +1,17 @@
 import useTodoContext from "../hooks/UseTodoContext";
+import ITodoItem from "./ITodoItem";
+import TodoFilter from "./TodoFilter";
 import TodoItem from "./TodoItem";
 
 // The parent list of todo items.
 const TodoList: React.FC = () => {
   // Retrieve TodoContext properties
   const { todoItems, filter } = useTodoContext();
+
+  // Define filter functions
+  const filterAll = (): boolean => true;
+  const filterActive = (item: ITodoItem): boolean => !item.completed;
+  const filterCompleted = (item: ITodoItem): boolean => item.completed;
 
   return (
     <>
@@ -17,18 +24,32 @@ const TodoList: React.FC = () => {
         aria-labelledby="list-heading"
       >
         {
-          // Iterate over data array to add TodoItems
-          todoItems.map((item) => (
-            <TodoItem
-              id={item.id}
-              name={item.name}
-              completed={item.completed}
-              key={item.id}
-            />
-          ))
+          // Iterate over context array to add TodoItems
+          todoItems
+            .filter((item) => {
+              switch (filter) {
+                case TodoFilter.All:
+                  return filterAll();
+                case TodoFilter.Active:
+                  return filterActive(item);
+                case TodoFilter.Completed:
+                  return filterCompleted(item);
+                default:
+                  return true; // No filter applied
+              }
+            })
+            .map((item) => (
+              <TodoItem
+                id={item.id}
+                name={item.name}
+                completed={item.completed}
+                key={item.id}
+              />
+            ))
         }
       </ul>
     </>
   );
 };
+
 export default TodoList;
