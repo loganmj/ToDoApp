@@ -44,7 +44,7 @@ const TodoItem: React.FC<ITodoItem> = ({ id, name, completed }) => {
 
   // Handles the delete button being clicked
   const handleDeleteButtonClick = () => {
-    removeTodoItem(name);
+    removeTodoItem(id);
   };
 
   // Define editing state template
