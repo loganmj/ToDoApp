@@ -12,13 +12,6 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
 
   // Update todo item list with new array
   const updateTodoItems = (newArray: ITodoItem[]) => {
-    // Debug
-    for (const task of newArray) {
-      console.log(
-        `Updated task: ID = ${task.id}, Name = ${task.name}, Completed = ${task.completed}`
-      );
-    }
-
     setTodoItems(newArray);
   };
 
