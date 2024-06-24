@@ -2,13 +2,17 @@ import { ReactNode, useState } from "react";
 import TodoContext from "../contexts/TodoContext";
 import ITodoItem from "./ITodoItem";
 import { v4 as uuidv4 } from "uuid";
+import TodoFilter from "./TodoFilter";
 
 // Provides access to the TodoContext
 const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  // todoItems context property
+  // The parent todo items array
   const [todoItems, setTodoItems] = useState<ITodoItem[]>([]);
+
+  // The active todo list filter
+  const [filter, setFilter] = useState<TodoFilter>(TodoFilter.All);
 
   // Add todo item to the list
   const addTodoItem = (name: string) => {
@@ -66,6 +70,7 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
     <TodoContext.Provider
       value={{
         todoItems,
+        filter,
         addTodoItem,
         removeTodoItem,
         setItemCompleted,
