@@ -17,8 +17,8 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   // Remove a todo item from the list
-  const removeTodoItem = (name: string) => {
-    const updatedList = todoItems.filter((item) => item.name !== name);
+  const removeTodoItem = (itemID: string) => {
+    const updatedList = todoItems.filter((item) => item.id !== itemID);
     setTodoItems(updatedList);
   };
 

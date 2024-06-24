@@ -7,7 +7,7 @@ interface ITodoContext {
 
   // Functions
   addTodoItem: (name: string) => void;
-  removeTodoItem: (name: string) => void;
+  removeTodoItem: (itemID: string) => void;
   setItemCompleted: (itemID: string, completed: boolean) => void;
   setItemName: (itemID: string, newName: string) => void;
 }
