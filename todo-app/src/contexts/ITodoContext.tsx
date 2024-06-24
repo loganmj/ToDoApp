@@ -2,10 +2,14 @@ import ITodoItem from "../components/ITodoItem";
 
 // Interface for TodoContext
 interface ITodoContext {
+  // Properties
   todoItems: ITodoItem[];
-  updateTodoItems: (newArray: ITodoItem[]) => void;
+
+  // Functions
   addTodoItem: (name: string) => void;
   removeTodoItem: (name: string) => void;
+  setItemCompleted: (itemID: string, completed: boolean) => void;
+  setItemName: (itemID: string, newName: string) => void;
 }
 
 export default ITodoContext;

@@ -10,11 +10,6 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
   // todoItems context property
   const [todoItems, setTodoItems] = useState<ITodoItem[]>([]);
 
-  // Update todo item list with new array
-  const updateTodoItems = (newArray: ITodoItem[]) => {
-    setTodoItems(newArray);
-  };
-
   // Add todo item to the list
   const addTodoItem = (name: string) => {
     const newTodoItem = { id: `${name}-${uuidv4()}`, name, completed: false };
@@ -27,9 +22,57 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
     setTodoItems(updatedList);
   };
 
+  // Sets the completed property of an item
+  const setItemCompleted = (itemID: string, isCompleted: boolean) => {
+    const newArray = todoItems.map((item) => {
+      if (item.id === itemID) {
+        return { ...item, completed: isCompleted };
+      }
+
+      return item;
+    });
+
+    // DEBUG
+    printItems(newArray);
+
+    setTodoItems(newArray);
+  };
+
+  // Update todo item list with new array
+  const setItemName = (itemID: string, newName: string) => {
+    const newArray = todoItems.map((item) => {
+      if (item.id === itemID) {
+        return { ...item, name: newName };
+      }
+
+      return item;
+    });
+
+    // DEBUG
+    printItems(newArray);
+
+    setTodoItems(newArray);
+  };
+
+  // Prints an item list
+  // This is used primarily for debuggin
+  const printItems = (items: ITodoItem[]) => {
+    for (const item of items) {
+      console.log(
+        `Item: ID = ${item.id}, Name = ${item.name}, Completed = ${item.completed}`
+      );
+    }
+  };
+
   return (
     <TodoContext.Provider
-      value={{ todoItems, updateTodoItems, addTodoItem, removeTodoItem }}
+      value={{
+        todoItems,
+        addTodoItem,
+        removeTodoItem,
+        setItemCompleted,
+        setItemName,
+      }}
     >
       {children}
     </TodoContext.Provider>
