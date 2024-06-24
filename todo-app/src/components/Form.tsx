@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useTodoContext from "../hooks/UseTodoContext";
 
+// The todo list input form.
 const Form: React.FC = () => {
   // Retrieve TodoContext
   const { addTodoItem } = useTodoContext();

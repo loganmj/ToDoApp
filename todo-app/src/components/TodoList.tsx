@@ -1,6 +1,7 @@
 import useTodoContext from "../hooks/UseTodoContext";
 import TodoItem from "./TodoItem";
 
+// The parent list of todo items.
 const TodoList: React.FC = () => {
   // Retrieve TodoContext properties
   const { todoItems } = useTodoContext();

@@ -1,3 +1,4 @@
+// A button that allows the user to filter the todo list.
 const FilterButton: React.FC = () => {
   return (
     <button type="button" className="btn toggle-btn" aria-pressed="true">

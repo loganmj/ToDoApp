@@ -2,6 +2,7 @@ import { useState } from "react";
 import useTodoContext from "../hooks/UseTodoContext";
 import ITodoItem from "./ITodoItem";
 
+// A self-contained todo list item.
 const TodoItem: React.FC<ITodoItem> = ({ id, name, completed }) => {
   // Retrieve TodoContext
   const { setItemCompleted, setItemName, removeTodoItem } = useTodoContext();
