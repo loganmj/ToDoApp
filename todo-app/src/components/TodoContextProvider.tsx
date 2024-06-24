@@ -32,9 +32,6 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
       return item;
     });
 
-    // DEBUG
-    printItems(newArray);
-
     setTodoItems(newArray);
   };
 
@@ -48,11 +45,10 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
       return item;
     });
 
-    // DEBUG
-    printItems(newArray);
-
     setTodoItems(newArray);
   };
+
+  /*
 
   // Prints an item list
   // This is used primarily for debuggin
@@ -63,6 +59,8 @@ const TodoContextProvider: React.FC<{ children: ReactNode }> = ({
       );
     }
   };
+
+  */
 
   return (
     <TodoContext.Provider
