@@ -1,5 +1,5 @@
 # Use latest Node runtime
-FROM node:16 AS build
+FROM node:latest AS build
 
 # Set the working directory
 WORKDIR /app
