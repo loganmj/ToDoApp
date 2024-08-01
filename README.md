@@ -7,5 +7,7 @@ The repository is setup to run a GitHub Actions script whenever code is pushed t
 This script will build the code, compose it into a docker image, and upload the artifact
 to a repository on DockerHub.
 
+Here is a link to the container on DockerHub: https://hub.docker.com/r/loganmj/todo-app
+
 Here is a link to the Docker/Github Actions documentation on the Docker website:
 https://docs.docker.com/build/ci/github-actions/
