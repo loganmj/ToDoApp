@@ -1,5 +1,5 @@
 # Use latest Node runtime
-FROM node:latest
+FROM node:16 AS build
 
 # Set the working directory
 WORKDIR /app
@@ -16,8 +16,14 @@ COPY todo-app/ .
 # Build for production
 RUN npm run build
 
-# Serve the code using Vite
-CMD ["serve", "-s", "build", "-l", "3000"]
+# use an official nginx image as the base
+FROM nginx:alpine
 
-# Expose the port the app runs on
+# Copy the build output to the nginx html directory
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose port 3000
 EXPOSE 3000
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
