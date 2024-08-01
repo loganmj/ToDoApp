@@ -1,5 +1,6 @@
 # ToDoApp
 A simple tutorial React app that allows users to manage a todo list.
+The project includes encapsulated components and uses context hooks to manage state.
 
 # CI/CD
 The repository is setup to run a GitHub Actions script whenever code is pushed to main.
