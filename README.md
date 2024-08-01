@@ -1,5 +1,5 @@
 # ToDoApp
-A simple tutorial React app that allows users to manage a todo list.
+A simple React app that allows users to manage a todo list.
 The project includes encapsulated components and uses context hooks to manage state.
 
 # CI/CD
