@@ -9,11 +9,6 @@ This project is front-end only. It stands as a proof of concept, and accomplishe
 2. Create a Github Actions script that will automatically build the app, compose it into a Docker container, and upload the container to a DockerHub repository.
 3. I can successfully download the container from Docker Hub and run it on my local machine.
 
-## CI/CD
-The repository is setup to run a GitHub Actions script whenever code is pushed to main.
-This script will build the code, compose it into a docker image, and upload the artifact
-to a repository on DockerHub.
-
 Here is a link to the container on DockerHub: https://hub.docker.com/r/loganmj/todo-app
 
 Here is a link to the Docker/Github Actions documentation on the Docker website:
